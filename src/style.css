@@ -1,0 +1,21 @@
+input[type='text']{
+  background-color: white;
+  outline: none;
+  border: none;
+  width: 100%;
+  border: 1px solid rgb(199, 199, 199);
+  border-radius: 5px;
+  padding-left: 10px;
+  transition: all 0.4s ease;
+}
+
+input[type='text']:disabled{
+  color: #636e79;
+  background-color: rgb(233, 233, 233);
+
+}
+
+#map-container{
+  width: 80%;
+  height: 50vh;
+}
