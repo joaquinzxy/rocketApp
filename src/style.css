@@ -1,4 +1,4 @@
-input[type='text']{
+input[type='text'] {
   background-color: white;
   outline: none;
   border: none;
@@ -9,13 +9,17 @@ input[type='text']{
   transition: all 0.4s ease;
 }
 
-input[type='text']:disabled{
+input[type='text']:disabled {
   color: #636e79;
   background-color: rgb(233, 233, 233);
-
 }
 
-#map-container{
+#map-container {
   width: 80%;
   height: 50vh;
+}
+
+footer {
+  padding-top: 10vh;
+  text-align: center;
 }
