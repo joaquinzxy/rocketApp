@@ -11,6 +11,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
+  ignorePatterns: ['docs/*'],
   rules: {
     indent: ['error', 2],
     'linebreak-style': ['error', 'unix'],
