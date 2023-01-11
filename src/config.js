@@ -3,7 +3,7 @@ export const google = window.google
 export const config = {
   AUTOCOMPLETE: {
     componentRestrictions: { country: 'uy' },
-    types: ['geocode'],
+    types: [],
     fields: ['place_id', 'geometry', 'id'],
   },
   MAP_ID: 'map-container',

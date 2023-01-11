@@ -3,7 +3,7 @@ import { config, google } from '../config'
 import { Button, Card, Container, Row, Text } from '@nextui-org/react'
 import { calcRoute } from '../handlers/calcRoute'
 
-export const Map = ({ waypoints = [], setDirections }) => {
+export const Map = ({ waypoints = [], setDirections, setTableData }) => {
   const [status, setStatus] = useState('OK')
   const [isDisabled, setIsDisabled] = useState(true)
 
@@ -44,6 +44,7 @@ export const Map = ({ waypoints = [], setDirections }) => {
         htmlMap,
         setDirections,
         setStatus,
+        setTableData,
       })
     }
   }
@@ -53,7 +54,7 @@ export const Map = ({ waypoints = [], setDirections }) => {
       {status != 'OK' && (
         <Card style={{ marginBottom: 50, marginTop: 30 }}>
           <Card.Body>
-            <Text>
+            <Text css={{ textAlign: 'center' }}>
               {config.ERRORS.LIST.includes(status)
                 ? config.ERRORS.MESSAGES[status]
                 : `Ocurrio un error: ${status}`}
@@ -65,7 +66,7 @@ export const Map = ({ waypoints = [], setDirections }) => {
       <Container>
         <Row justify='center' style={{ padding: 15 }}>
           <Button onClick={onClickCalc} disabled={isDisabled}>
-            Calcular ruta
+            Optimizar ruta
           </Button>
         </Row>
       </Container>

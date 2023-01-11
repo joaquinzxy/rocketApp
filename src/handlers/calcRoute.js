@@ -1,4 +1,5 @@
 import { google } from '../config'
+import { generateTableData } from './generateTableData'
 import { prepareStops } from './prepareStops'
 import { sortRoute } from './sortRoute'
 
@@ -9,6 +10,7 @@ export const calcRoute = async ({
   htmlMap,
   setDirections,
   setStatus,
+  setTableData,
 }) => {
   const { firstStop, lastStop, middleStops } = prepareStops(waypoints)
   const request = {
@@ -37,5 +39,6 @@ export const calcRoute = async ({
     directionsDisplay.setMap(htmlMap)
     directionsDisplay.setDirections(result)
     setDirections(sortRoute(prepareStops(waypoints), result))
+    setTableData(generateTableData(result))
   }
 }
